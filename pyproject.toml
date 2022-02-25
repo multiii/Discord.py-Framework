@@ -11,6 +11,14 @@ tinydb = "^4.5.1"
 discord-ext-check = "^0.1"
 discord-ext-menus = "^1.1"
 discord = "^1.7.3"
+pymongo = "^4.0.1"
+dnspython = "^2.2.0"
+faunadb = "^4.1.1"
+moviepy = "^1.0.3"
+opencv-python = "^4.5.5"
+imutils = "^0.5.4"
+pyffmpeg = "^2.2.2"
+ffmpeg = "^1.4"
 
 [tool.poetry.dev-dependencies]
 

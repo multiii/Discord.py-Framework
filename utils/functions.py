@@ -9,8 +9,11 @@ db = TinyDB("database.yaml", storage=YAMLStorage)
 pr = db.table("prefix")
 
 def get_prefix(bot, message):
+  if not message.guild:
+    return "?"
+    
   if not bool(pr.get(User.id == message.guild.id)):
-    return "!!"
+    return "?"
 
   return pr.get(User.id == message.guild.id)["prefix"]
 
