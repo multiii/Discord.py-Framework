@@ -1,7 +1,6 @@
 import os
 
-from discord.ext import commands
-from pymongo import MongoClient
+from nextcord.ext import commands
 
 from utils.functions import get_prefix
 from utils.pagination import Embed
@@ -11,15 +10,11 @@ bot = commands.Bot(
   command_prefix=get_prefix
 )
 
-client = MongoClient(os.getenv("MongoDB"))
-economy = client["myFirstDatabase"]["users"]
-
 @bot.event
 async def on_ready():
   print("Ready!")
 
   bot.Embed = Embed
-  bot.economy = economy
   bot.menus = {}
 
 for filename in os.listdir("./cogs"):
