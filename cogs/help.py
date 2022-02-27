@@ -1,8 +1,8 @@
 import itertools
 import math
 
-import discord
-from discord.ext import commands
+import nextcord as discord
+from nextcord.ext import commands
 
 from utils import functions, pagination, resources
 
@@ -71,7 +71,7 @@ class CustomHelpCommand(commands.HelpCommand):
         for cog in cogs:
             cog, description, command_list = cog
 
-            if cog.qualified_name == "Listeners":
+            if cog.qualified_name == "Private":
               continue
 
             embed.add_field(name=f"{cog.qualified_name.capitalize()} | `{functions.get_prefix(ctx.bot, ctx.message)}help {cog.qualified_name}`", value=' '.join(f'`{command.qualified_name}`' for command in cog.walk_commands()), inline=False)
@@ -94,7 +94,7 @@ class CustomHelpCommand(commands.HelpCommand):
         filtered = await self.filter_commands(bot.commands, sort=True, key=get_category)
 
         for cog_name, commands in itertools.groupby(filtered, key=get_category):
-            if cog_name == "Listeners":
+            if cog_name == "Private":
               continue
               
             commands = sorted(commands, key=lambda c: c.name)
