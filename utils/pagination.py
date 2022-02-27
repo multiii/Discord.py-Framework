@@ -1,10 +1,9 @@
-import asyncio
 import datetime
 import math
 import re
 
-import discord
-from discord.ext import menus
+import nextcord as discord
+from nextcord.ext import menus
 
 REMOVE_BUTTONS = [
     "\N{BLACK LEFT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR}\ufe0f",
