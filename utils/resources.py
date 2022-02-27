@@ -2,7 +2,7 @@
 
 from typing import Union
 
-import discord
+import nextcord as discord
 
 from utils import functions
 
